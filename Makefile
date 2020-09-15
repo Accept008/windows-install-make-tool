@@ -4,8 +4,9 @@ DOCKER_IMAGE_REPO=registry.cn-hangzhou.aliyuncs.com/bus/spring-boot-service
 DOCKER_IMAGE_VERSION=2.2.2
 # 部署环境(qa、uat、prod);可直接直接修改,也可命令传参(eg: make DOCKER_IMAGE_VERSION=123 DEPLOYMENT_ENV=dev)
 DEPLOYMENT_ENV=dev
-# 本地镜像ID
+# 本地镜像ID(windows系统需要安装grep和awk支持,且print处需使用双引号;linux系统print处使用单引号)
 DOCKER_IMAGE_RMI_ID:=$(shell docker images | grep $(DOCKER_IMAGE_REPO) | awk '{print $$3}')
+#DOCKER_IMAGE_RMI_ID:=$(shell docker images | grep  $(DOCKER_IMAGE_REPO) | awk "{print $$3}")
 
 #获取当前分支名(可用于设定版本号)
 CURRENT_GIT_BRANCH_VERSION:=$(shell git symbolic-ref --short HEAD)
