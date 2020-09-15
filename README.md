@@ -21,3 +21,7 @@ windows上make工具[下载](http://gnuwin32.sourceforge.net/packages/make.htm)
 4.1使用Makefile执行命令,将Java spring boot服务构建Docker镜像、上传阿里云镜像仓库、部署k8s容器服务
 ![image](./img/makefile-deploy-springboot-to-k8s.png)
 
+makefile删除构建的镜像命令
+![image](./img/docker-image-id.png)
+![image](./img/docker-image-delete.png)
+
